@@ -1,0 +1,4 @@
+requests
+fastapi
+gensim
+bs4
