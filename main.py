@@ -6,12 +6,12 @@ app = FastAPI()
 
 
 @app.post("/topics")
-async def find__topics(request: RequestItem):
+async def find_topics(request: RequestItem):
     html_parser = HTMLParser()
     html_text = html_parser.get_html_from_url(request.url)
     parsed_html = html_parser.parse_html(html_text)
 
-    return html_parser.find_topics_from_parsed_html(parsed_html)
+    return html_parser.find_topics_from_parsed_html(parsed_html, request.num_topics)
 
 
 if __name__ == "__main__":
